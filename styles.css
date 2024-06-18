@@ -19,3 +19,14 @@
     border: 3px solid #1167b1; 
     border-radius: 15%;
 }
+
+.hovered {
+    background-color: #8968cd;
+    display: flex;
+    color: white;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 3px solid #1167b1; 
+    border-radius: 15%;
+}
