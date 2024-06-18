@@ -19,14 +19,27 @@ function createGrid(length, width) {
     }
 }
 
-function changeColor() {
-    let squares = document.querySelectorAll(".squares"); 
-    squares.forEach((square) => {
-        square.addEventListener('mouseover', () => {
-            square.setAttribute('class', 'hovered'); 
+
+function startSketch() {
+
+    function changeColor() {
+        let squares = document.querySelectorAll(".squares"); 
+        squares.forEach((square) => {
+            square.addEventListener('mouseover', () => {
+                square.setAttribute('class', 'hovered'); 
+            });
         });
-    });
+    }
+
+    let sketch = document.getElementById("grid");
+    sketch.addEventListener('click', () => {
+        // i want this to trigger the changeColor function 
+        changeColor();
+    })
+
+
 }
 
+
 createGrid(16, 16);
-changeColor();
+startSketch();
