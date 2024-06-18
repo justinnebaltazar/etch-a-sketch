@@ -1,14 +1,14 @@
-let container = document.getElementById("container"); 
-let number = 1;
+let grid = document.getElementById("grid"); 
 
 function createGrid(length, width) {
     for (let i = 0; i < length; i++) {
-        let row = document.createElement('div'); 
-        container.appendChild(row);
+        let row = document.createElement('div');
+        row.setAttribute('class', 'rows')
+        grid.appendChild(row);
         for (let j = 0; j < width; j++) {
             let gridSquare = document.createElement('div');
-            gridSquare.textContent = number; 
-            number = number + 1; 
+            gridSquare.setAttribute('class', 'squares');
+            gridSquare.textContent = i + 1;
             row.appendChild(gridSquare);
         }
     }

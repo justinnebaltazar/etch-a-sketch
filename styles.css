@@ -1,0 +1,21 @@
+#container {
+    background-color: #c3d3d4 ;
+    display: flex; 
+    justify-content: center;
+}
+
+.rows {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.squares {
+    display: flex;
+    background-color: cadetblue;
+    color: white;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 3px solid #1167b1; 
+    border-radius: 15%;
+}
