@@ -11,7 +11,7 @@ function createGrid(length, width) {
 
             let gridSquare = document.createElement('div');
             gridSquare.setAttribute('class', 'squares');
-            // DElETE
+            // DElETE LATER
             gridSquare.textContent = i + 1;
             row.appendChild(gridSquare);
 

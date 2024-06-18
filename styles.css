@@ -1,7 +1,9 @@
+
 #container {
     background-color: #c3d3d4 ;
     display: flex; 
     justify-content: center;
+    align-items: center;
 }
 
 .rows {
