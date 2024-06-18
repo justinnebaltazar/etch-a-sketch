@@ -1,6 +1,14 @@
-let grid = document.getElementById("grid"); 
+let grid = document.createElement('div'); 
+grid.setAttribute('id', 'grid');
+
+let container = document.querySelector('#container'); 
+container.appendChild(grid);
+
+let length; 
+let width;
 
 function createGrid(length, width) {
+
     for (let i = 0; i < length; i++) {
 
         let row = document.createElement('div');
@@ -36,10 +44,30 @@ function startSketch() {
         // i want this to trigger the changeColor function 
         changeColor();
     })
+}
 
+function deleteGrid() {
+    let container = document.getElementById('container'); 
+    container.removeChild(grid);
 
 }
 
+let btn = document.querySelector('button'); 
+btn.addEventListener('click', () => {
+    length = prompt("Grid length: ");
+    width = prompt("Grid width: ")
+    
+    let length_int = parseInt(length);
+    let width_int = parseInt(width);
+
+    deleteGrid();
+    
+    grid = document.createElement('div');
+    grid.setAttribute('id', 'grid');
+    container.appendChild(grid);
+
+    createGrid(length_int, width_int);
+});
 
 createGrid(16, 16);
 startSketch();
