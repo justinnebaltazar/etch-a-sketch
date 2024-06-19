@@ -20,7 +20,7 @@ function createGrid(length, width) {
             let gridSquare = document.createElement('div');
             gridSquare.setAttribute('class', 'squares');
             // DElETE LATER
-            gridSquare.textContent = i + 1;
+            // gridSquare.textContent = i + 1;
             row.appendChild(gridSquare);
 
         }
@@ -67,6 +67,7 @@ btn.addEventListener('click', () => {
     container.appendChild(grid);
 
     createGrid(length_int, width_int);
+    startSketch();
 });
 
 createGrid(16, 16);
