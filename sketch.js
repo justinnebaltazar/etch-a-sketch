@@ -33,16 +33,22 @@ function startSketch() {
         let squares = document.querySelectorAll(".squares"); 
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
+
+                if (square.classList.contains('rainbow')) {
+                    square.classList.remove('rainbow'); 
+                }
+
                 square.classList.add('hovered'); 
             });
         });
-    }
+    };
 
     function randomColor() {
         let squares = document.querySelectorAll(".squares"); 
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
-                square.classList.add('hovered'); 
+                square.classList.remove('hovered')
+                square.classList.add('rainbow'); 
                 const getColorNumber = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
                 let r = getColorNumber(0, 255); 
@@ -51,10 +57,20 @@ function startSketch() {
                 square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
         });
-    }
+    };
 
     let sketch = document.getElementById("grid");
     sketch.addEventListener('click', () => {
+        changeColor();
+    });
+
+    let random = document.querySelector('.random');
+    random.addEventListener('click', () => {
+        randomColor();
+    });
+   
+    let defaultColor = document.querySelector('.default');
+    defaultColor.addEventListener('click', () => {
         changeColor();
     });
 }
@@ -83,4 +99,3 @@ btn.addEventListener('click', () => {
 });
 
 createGrid(16, 16);
-startSketch();
