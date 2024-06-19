@@ -37,13 +37,15 @@ function startSketch() {
                 if (square.classList.contains('rainbow')) {
                     square.classList.remove('rainbow'); 
                 }
-
-                square.classList.add('hovered'); 
+                square.classList.add('hovered');
             });
         });
     };
 
-    function randomColor() {
+        
+    let random = document.querySelector('.random');
+    random.addEventListener('click', () => {
+        
         let squares = document.querySelectorAll(".squares"); 
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
@@ -57,23 +59,21 @@ function startSketch() {
                 square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
         });
-    };
+    });
+
+    let defaultColor = document.querySelector('.default');
+    defaultColor.addEventListener('click', () => {
+        changeColor();
+    });
+}
+
 
     let sketch = document.getElementById("grid");
     sketch.addEventListener('click', () => {
         changeColor();
     });
 
-    let random = document.querySelector('.random');
-    random.addEventListener('click', () => {
-        randomColor();
-    });
    
-    let defaultColor = document.querySelector('.default');
-    defaultColor.addEventListener('click', () => {
-        changeColor();
-    });
-}
 
 function deleteGrid() {
     let container = document.getElementById('container'); 
