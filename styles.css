@@ -23,11 +23,4 @@
 
 .hovered {
     background-color: #8968cd;
-    display: flex;
-    color: white;
-    width: 1em;
-    height: 1em;
-    box-sizing: border-box;
-    border: 0.1em solid #1167b1; 
-    border-radius: 15%;
 }

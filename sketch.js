@@ -60,6 +60,11 @@ btn.addEventListener('click', () => {
     let length_int = parseInt(length);
     let width_int = parseInt(width);
 
+    if (isNaN(length_int) || isNan(width_int) || length_int <= 0 || width_int <= 0) {
+        alert("Grid dimensions must be valid positive numbers.")
+        return;
+    }
+
     deleteGrid();
     
     grid = document.createElement('div');
