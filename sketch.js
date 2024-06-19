@@ -38,6 +38,21 @@ function startSketch() {
         });
     }
 
+    function randomColor() {
+        let squares = document.querySelectorAll(".squares"); 
+        squares.forEach((square) => {
+            square.addEventListener('mouseover', () => {
+                square.classList.add('hovered'); 
+                const getColorNumber = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+
+                let r = getColorNumber(0, 255); 
+                let g = getColorNumber(0, 255);
+                let b = getColorNumber(0, 255);
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            });
+        });
+    }
+
     let sketch = document.getElementById("grid");
     sketch.addEventListener('click', () => {
         changeColor();
