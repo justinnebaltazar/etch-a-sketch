@@ -3,10 +3,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #a5c8c9;
 }
 
 .title {
     padding-bottom: 30px;
+    width: 660px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif
+
 }
 
 #container {
@@ -16,7 +28,8 @@ body {
     align-items: center;
     width: 660px; 
     height: 660px;
-    padding: 10px;
+    padding: 30px;
+    border-radius: 5%;
 }
 
 .rows {
