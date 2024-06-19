@@ -1,30 +1,28 @@
-let grid = document.createElement('div'); 
-grid.setAttribute('id', 'grid');
-
 let container = document.querySelector('#container'); 
-container.appendChild(grid);
-
-let length; 
-let width;
 
 function createGrid(length, width) {
 
-    for (let i = 0; i < length; i++) {
+    let grid = document.createElement('div'); 
+    grid.setAttribute('id', 'grid');
+    container.appendChild(grid);
 
-        let row = document.createElement('div');
-        row.setAttribute('class', 'rows');
-        grid.appendChild(row);
+    // assuming grid is not a square 
+    let squareSize = Math.floor(660 / Math.max(length, width));
+
+    for (let i = 0; i < length; i++) {
+        let row = document.createElement('div'); 
+        row.setAttribute('class', 'rows'); 
+        grid.appendChild(row); 
 
         for (let j = 0; j < width; j++) {
-
-            let gridSquare = document.createElement('div');
-            gridSquare.setAttribute('class', 'squares');
-            // DElETE LATER
-            // gridSquare.textContent = i + 1;
+            let gridSquare = document.createElement('div'); 
+            gridSquare.setAttribute('class', 'squares'); 
+            gridSquare.style.width = `${squareSize}px`;
+            gridSquare.style.height = `${squareSize}px`;
             row.appendChild(gridSquare);
-
         }
     }
+    startSketch();
 }
 
 
