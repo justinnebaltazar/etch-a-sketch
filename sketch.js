@@ -22,6 +22,7 @@ function createGrid(length, width) {
             row.appendChild(gridSquare);
         }
     }
+
     startSketch();
 }
 
@@ -39,9 +40,8 @@ function startSketch() {
 
     let sketch = document.getElementById("grid");
     sketch.addEventListener('click', () => {
-        // i want this to trigger the changeColor function 
         changeColor();
-    })
+    });
 }
 
 function deleteGrid() {
@@ -64,13 +64,7 @@ btn.addEventListener('click', () => {
     }
 
     deleteGrid();
-    
-    grid = document.createElement('div');
-    grid.setAttribute('id', 'grid');
-    container.appendChild(grid);
-
     createGrid(length_int, width_int);
-    startSketch();
 });
 
 createGrid(16, 16);
