@@ -14,10 +14,15 @@ body {
 
 h1 {
     font-weight: bold;
+    font-size: 36px; 
+}
+
+p {
+    font-size: 18px;
 }
 
 button {
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif; 
 
 }
 
@@ -48,4 +53,9 @@ button {
 
 .hovered {
     background-color: #8968cd;
+}
+
+.options {
+    display: flex;
+    margin: 30px 0;
 }
