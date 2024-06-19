@@ -34,7 +34,7 @@ function startSketch() {
         let squares = document.querySelectorAll(".squares"); 
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
-                square.setAttribute('class', 'hovered'); 
+                square.classList.add('hovered'); 
             });
         });
     }
