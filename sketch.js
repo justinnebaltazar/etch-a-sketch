@@ -7,7 +7,7 @@ function createGrid(length, width) {
     container.appendChild(grid);
 
     // assuming grid is not a square 
-    let squareSize = Math.floor(660 / Math.max(length, width));
+    let squareSize = Math.floor(600 / Math.max(length, width));
 
     for (let i = 0; i < length; i++) {
         let row = document.createElement('div'); 
@@ -130,6 +130,7 @@ btn.addEventListener('click', () => {
 
     deleteGrid();
     createGrid(length_int, width_int);
+    
 });
 
 createGrid(16, 16);
