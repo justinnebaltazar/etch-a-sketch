@@ -8,13 +8,24 @@ body {
 
 .title {
     padding-bottom: 30px;
-    width: 600px;
     font-family: 'Times New Roman', Times, serif;
+    width: 600px;
+    align-items: center;
+}
+
+.newGrid {
+    width: 100px; 
+    height: 60px;
+    padding: 10px;
+    border: 2px solid cadetblue;
+    border-radius: 15%; 
+    font-size: 18px;
 }
 
 h1 {
     font-weight: bold;
     font-size: 36px; 
+
 }
 
 p {

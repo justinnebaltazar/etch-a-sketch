@@ -115,7 +115,7 @@ function deleteGrid() {
 
 }
 
-let btn = document.querySelector('.title button'); 
+let btn = document.querySelector('#size'); 
 btn.addEventListener('click', () => {
     length = prompt("Grid length: ");
     width = prompt("Grid width: ")
