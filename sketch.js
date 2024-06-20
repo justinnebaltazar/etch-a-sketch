@@ -99,13 +99,7 @@ function startSketch() {
         removeOpacity(); 
         applyRandomColor(); 
     }); 
-
-    let opacityButton = document.querySelector('.darken'); 
-    opacityButton.addEventListener('click', () => {
-        removeOpacity();
-        increaseOpacity();
-    });
-
+    
     changeColor(); 
 }
    
