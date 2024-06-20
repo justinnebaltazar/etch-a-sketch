@@ -26,62 +26,60 @@ function createGrid(length, width) {
     startSketch();
 }
 
-
 function startSketch() {
+    let squares = document.querySelectorAll(".squares"); 
 
     function changeColor() {
-        let squares = document.querySelectorAll(".squares"); 
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
-
-                if (square.classList.contains('rainbow')) {
-                    square.classList.remove('rainbow'); 
-                }
+                square.classList.remove('rainbow');
                 square.classList.add('hovered');
+                square.style.backgroundColor = '';
             });
         });
     };
 
-        
-    let random = document.querySelector('.random');
-    random.addEventListener('click', () => {
-        
-        let squares = document.querySelectorAll(".squares"); 
+    function applyRandomColor() {
         squares.forEach((square) => {
             square.addEventListener('mouseover', () => {
-                square.classList.remove('hovered')
+                square.classList.remove('hovered'); 
                 square.classList.add('rainbow'); 
-                const getColorNumber = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
+                const getColorNumber  = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
                 let r = getColorNumber(0, 255); 
-                let g = getColorNumber(0, 255);
-                let b = getColorNumber(0, 255);
-                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                let g = getColorNumber(0, 255); 
+                let b = getColorNumber(0, 255); 
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
+
             });
         });
-    });
+         
+    };
 
-    let defaultColor = document.querySelector('.default');
-    defaultColor.addEventListener('click', () => {
-        changeColor();
-    });
+    /* function increaseOpacity() */
+
+    // event listeners for the color scheme buttons
+    let defaultButton = document.querySelector('.default');
+    defaultButton.addEventListener('click', changeColor);
+
+    let randomButton = document.querySelector('.random');
+    randomButton.addEventListener('click', applyRandomColor); 
+
+    /* 
+    let opacityButton = document.querySelector('.darken'); 
+    opacityButton.addEventListener('click', increaseOpacity());
+    */
+
+    changeColor(); 
 }
-
-
-    let sketch = document.getElementById("grid");
-    sketch.addEventListener('click', () => {
-        changeColor();
-    });
-
    
-
 function deleteGrid() {
     let container = document.getElementById('container'); 
     container.removeChild(grid);
 
 }
 
-let btn = document.querySelector('button'); 
+let btn = document.querySelector('.title button'); 
 btn.addEventListener('click', () => {
     length = prompt("Grid length: ");
     width = prompt("Grid width: ")
