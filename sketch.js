@@ -19,6 +19,8 @@ function createGrid(length, width) {
             gridSquare.setAttribute('class', 'squares'); 
             gridSquare.style.width = `${squareSize}px`;
             gridSquare.style.height = `${squareSize}px`;
+            // initialize opacity interaction count
+            gridSquare.dataset.opacityCount = 0;
             row.appendChild(gridSquare);
         }
     }
@@ -56,19 +58,53 @@ function startSketch() {
          
     };
 
-    /* function increaseOpacity() */
+    function increaseOpacity() {
+        squares.forEach((square) => {
+            square.addEventListener('mouseover', increaseOpacityHandler);
+        });
+    };
+
+    function increaseOpacityHandler(event) {
+        let square = event.target; 
+        let opacityCount = square.dataset.opacityCount;
+        if (opacityCount < 10) {
+            opacityCount += 1; 
+            square.dataset.opacityCount = opacityCount; 
+            let newOpacity = opacityCount * 0.1; 
+            square.style.opacity = newOpacity;
+            if (newOpacity >= 1) {
+                square.style.backgroundColor = 'black';
+            }
+        }
+    };
+
+    function removeOpacity() {
+        squares.forEach((square) => {
+            square.removeEventListener('mouseover', increaseOpacityHandler);
+        });
+    }
+
+    
+
 
     // event listeners for the color scheme buttons
     let defaultButton = document.querySelector('.default');
-    defaultButton.addEventListener('click', changeColor);
+    defaultButton.addEventListener('click', () => {
+        removeOpacity(); 
+        changeColor();
+    });
 
     let randomButton = document.querySelector('.random');
-    randomButton.addEventListener('click', applyRandomColor); 
+    randomButton.addEventListener('click', () => {
+        removeOpacity(); 
+        applyRandomColor(); 
+    }); 
 
-    /* 
     let opacityButton = document.querySelector('.darken'); 
-    opacityButton.addEventListener('click', increaseOpacity());
-    */
+    opacityButton.addEventListener('click', () => {
+        removeOpacity();
+        increaseOpacity();
+    });
 
     changeColor(); 
 }
