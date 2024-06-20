@@ -7,7 +7,7 @@ function createGrid(length, width) {
     container.appendChild(grid);
 
     // assuming grid is not a square 
-    let squareSize = Math.floor(600 / Math.max(length, width));
+    let squareSize = Math.floor(580 / Math.max(length, width));
 
     for (let i = 0; i < length; i++) {
         let row = document.createElement('div'); 
@@ -99,7 +99,7 @@ function startSketch() {
         removeOpacity(); 
         applyRandomColor(); 
     }); 
-    
+
     changeColor(); 
 }
    
