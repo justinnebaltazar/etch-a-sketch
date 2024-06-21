@@ -58,36 +58,6 @@ function startSketch() {
          
     };
 
-    function increaseOpacity() {
-        squares.forEach((square) => {
-            square.addEventListener('mouseover', increaseOpacityHandler);
-        });
-    };
-
-    function increaseOpacityHandler(event) {
-        let square = event.target; 
-        let opacityCount = square.dataset.opacityCount;
-        if (opacityCount < 10) {
-            opacityCount += 1; 
-            square.dataset.opacityCount = opacityCount; 
-            let newOpacity = opacityCount * 0.1; 
-            square.style.opacity = newOpacity;
-            if (newOpacity >= 1) {
-                square.style.backgroundColor = 'black';
-            }
-        }
-    };
-
-    function removeOpacity() {
-        squares.forEach((square) => {
-            square.removeEventListener('mouseover', increaseOpacityHandler);
-        });
-    }
-
-    
-
-
-    // event listeners for the color scheme buttons
     let defaultButton = document.querySelector('.default');
     defaultButton.addEventListener('click', () => {
         removeOpacity(); 
