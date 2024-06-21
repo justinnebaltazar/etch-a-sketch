@@ -60,13 +60,11 @@ function startSketch() {
 
     let defaultButton = document.querySelector('.default');
     defaultButton.addEventListener('click', () => {
-        removeOpacity(); 
         changeColor();
     });
 
     let randomButton = document.querySelector('.random');
     randomButton.addEventListener('click', () => {
-        removeOpacity(); 
         applyRandomColor(); 
     }); 
 
